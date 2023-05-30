@@ -1,0 +1,87 @@
+html,
+body {
+    min-height: 100%;
+    
+}
+
+#logout-btn {
+    box-align: right;
+}
+
+body {
+    background-color: #ffffff;
+}
+
+.container {
+    width: 70%;
+    height: 30%;
+    padding: 20px;
+}
+
+.py-4 {
+    display: flex;
+    gap: 1em;
+    font-size: 18px;
+    padding: 16px 0;
+}
+.py-4 li:hover {
+    display: inline-block;
+}
+.py-4 li {
+    padding: 5px 14px;
+}
+
+.search-box {
+    width: fit-content;
+    height: fit-content;
+    position: relative;
+}
+.input-search {
+    height: 50px;
+    width: 50px;
+    border-style: none;
+    padding: 10px;
+    font-size: 18px;
+    letter-spacing: 2px;
+    outline: none;
+    border-radius: 25px;
+    transition: all 0.5s ease-in-out;
+    background-color: #008080;
+    padding-right: 40px;
+    color: #008080;
+}
+.input-search::placeholder {
+    color: rgba(8, 122, 113, 0.781);
+    font-size: 18px;
+    letter-spacing: 2px;
+    font-weight: 100;
+}
+.btn-search {
+    width: 50px;
+    height: 50px;
+    border-style: none;
+    font-size: 20px;
+    font-weight: bold;
+    outline: none;
+    cursor: pointer;
+    border-radius: 50%;
+    position: absolute;
+    right: 0px;
+    color: #0ce77a;
+    background-color: #008080;
+    pointer-events: painted;
+}
+.btn-search:focus ~ .input-search {
+    width: 300px;
+    border-radius: 0px;
+    background-color: transparent;
+    border-bottom: 1px solid rgba(9, 216, 243, 0.5);
+    transition: all 500ms cubic-bezier(0, 0.11, 0.35, 2);
+}
+.input-search:focus {
+    width: 300px;
+    border-radius: 0px;
+    background-color: transparent;
+    border-bottom: 1px solid rgba(12, 241, 211, 0.5);
+    transition: all 500ms cubic-bezier(0, 0.11, 0.35, 2);
+}
