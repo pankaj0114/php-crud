@@ -1,58 +1,57 @@
 <?php
+include "config.php";
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
 
-//error_reporting(E_ALL);
-//ini_set('display_errors', 1);
-//include"navbar.html";
+if (isset($_POST['forget_pass_form'])){
+    $email = $_POST['email'];
+        session_start();
+        /*
+$login = "";
+$query = "SELECT * from  users where (email = '$login')"; 
+$res = mysqli_query($conn,$query);
+$count=mysqli_num_rows($res);
+//echo $count;
+
+
+
+if($count==1)
+
+{
+    */
+    $login ="";
+$findresult = mysqli_query($conn, "SELECT * FROM users WHERE ( email = '$login')");
+if($res = mysqli_fetch_array($findresult))
+{
+$logemail = $res['email'];  
+}
+$token = bin2hex(random_bytes(50));
+ $inresult = mysqli_query($conn,"INSERT INTO `pass_reset`( email_a, token) 
+ VALUES ('$logemail','$token') ");
+}
+
+
+
+
+
 
 ?>
 
 <html>
+    <head>
 
-<head>
+    </head>
+ <body>
+<div class="wrapper" style="width: 35%; margin: 0 auto;">
+    <form class="form-signin" name="forget_pass_form" action='passwordreset.php' method="post">
+        <h2 class="form-signin-heading">Forgot Password</h2><br />
+        <input type="text" class="form-control" name="email" placeholder="Email Your Email" required=""
+            autofocus="" />
+        <button class="btn btn-small btn-primary btn-block" type="submit">Submit</button>
+        <input type="hidden" name="sub_set" value="forgot" />
+    </form>
+</div>
 
-</head>
-
-<body>
-    <h1 style="text-align:center">Forgot password</h1>
-    <P style="text-align:center" >Forgot your paswsord. Please Enter the Email adddress So you able to get
-    the password reset page .
-    </P>
-    <form action= "passwordreset.php" method="post" style="text-align:center">
-
-        <?php if (isset($_GET['err'])) {
-
-            $err = $_GET['err'];
-            echo '<p class="errmsg">No user found. </p>';
-        }
-
-       
-      
-        ?>
-           <?php 
-
-           if(!isset($_GET['sent'])) 
-           {
-            ?>
-            <div class="email-address">
-
-                <input type="email" class="form-control" name="login_var" placeholder = " Your Email Address" required>
-            </div>
-
-            <div>
-                <button type="submit"  name="subforgot" style="width:20% ;text-align:center"> Change Password Link  </button>
-              
-            </div>
-
-            <?php
-           
-                  }
-
-                 include "footer.html";
-            ?>
-
-
-          
 </body>
 
 </html>
-

@@ -47,8 +47,6 @@ if ((isset($_POST['save']))) {
 }
 
 ?>
-
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -105,7 +103,7 @@ if ((isset($_POST['save']))) {
     <table class="table">
       <thead>
         <tr>
-          <th > Employee Name </th>
+          <th> Employee Name </th>
           <th>Email</th>
           <th>Address</th>
           <th>Gender</th>

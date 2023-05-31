@@ -1,26 +1,18 @@
 <?php   
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
         include "config.php";
-        //echo "hhuhuhujk";
+       
         if(isset($_POST['sub_set'])){
           $password =" ";
-          $emailtok=" ";
-          $passwordConfirm = "";
-          $cpassword =" ";
+          $logemail=" ";
+        $cpassword =" ";
           
-          $updateppassword = " UPDATE users SET password='$password' cpassword= '$cpassword'
-                            WHERE email='$emailtok'";
+          $updateppassword = " UPDATE users SET password='$password' ,cpassword= '$cpassword'
+                            WHERE email= 'logemail' ";
 
             $conn-> query($updateppassword);
-
-
-
-
-
-
-
-            
-
-        }
+}
     
 ?>
 <html>

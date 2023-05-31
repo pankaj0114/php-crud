@@ -1,51 +1,40 @@
 <?php
-//error_reporting(E_ALL);
-//ini_set('display_errors', 1);
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
 
+
+$req = $_POST; 
+$email="";
+$email = $req['email'];
 
 include "config.php";
 //echo "ghghi";
 
-if (isset($_POST['subforgot'])) 
-{
-    $login = $_REQUEST['login_var'];
-    $query = "SELECT * from  users where email='$login' ";
-    $res = mysqli_query($conn, $query);
-    $count = mysqli_num_rows($res);
-
-    $login = $_RESULT ['login_var'];
-    $query ="SELECT *from users where email ='$login'";
+session_start();
+if($_REQUEST['object'] == 'forgot'){ 
+if($_REQUEST['newpassword'] == $req['confirmpassword']) {
     
-    $res = mysqli_num_rows($res);
-       //echo"$count";
+    $SODIUM_CRYPTO_PWHASH_OPSLIMIT_INTERACTIVE="";
+   // $SODIUM_CRYPTO_PWHASH_MEMLIMIT_INTERACTIVE="";
 
-    if ($count == 1) {
-
-       $findresult = mysqli_query($conn, " SELECT * FROM users WHERE email = '$login'");
-        if ($res = mysqli_fetch_array($findresult)) {
-            $oldftemail = $res['email'];
-         }
-
-
+		$hash = sodium_crypto_pwhash_str(
+			$password,
+			$SODIUM_CRYPTO_PWHASH_OPSLIMIT_INTERACTIVE,
+			$SODIUM_CRYPTO_PWHASH_MEMLIMIT_INTERACTIVE
+		);
+        $email =""; 
+        $update = "UPDATE `users` SET 'password' = '$hash' WHERE email= '$email' ";
+        $result = mysqli_query($conn, $update);
+        $_SESSION['msg'] = 'Your new password has reset successfully, you can now login.';
+        header("Location: index.php");
+    } else {
+        $_SESSION['msg'] = 'Password does not match';
+        header("Location: index.php");
     }
-
-    $token = bin2hex(random_bytes(50));
-    
-    $oldeftemail =" ";
-
-    $inresult = "INSERT INTO pass_reset(email_a , token ) values ('$oldftemail' , '$token' )"; 
-    $conn ->query($inresult);
-    
-    if($inresult == true)
-
-            {
-                //echo "hello";
-                header("location:http://localhost/pankaj/passwordreset.php?token=" . $token . " ");
-            
-                
-            }
-        
 }
+
+
+
 
 ?>
  
