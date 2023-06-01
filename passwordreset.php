@@ -34,10 +34,9 @@ if (isset($_POST['reset_password'])) {
     }
   }
 }
-
-
-
 ?>
+
+        
 <html>
 
 <heAD>
