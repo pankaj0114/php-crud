@@ -3,12 +3,13 @@
 //error_reporting(E_ALL);
 //ini_set('display_errors', 1);
 session_start();
-
-
 include "navbar.html";
 include "config.php";
-?>
-<?php
+
+//if (empty($_SESSION['email']) || $_SESSION['password'] == '') {
+  //header("Location:login.php");
+//}
+
 
 if (!empty($_POST)) {
   //$nameErr = null;
@@ -45,19 +46,10 @@ if (!empty($_POST)) {
               values('$name','$email','$address', '$gender', '$states', '$programmer')";
     $q = $conn->query($sql);
 
-   
+
     $conn->close();
     header("Location:index.php");
-
-    if(empty($_SESSION['email']) || $_SESSION['password'] == ''){
-      header("Location:login.php");
-      
-    }
-    
-
   }
-
-
 }
 ?>
 <!DOCTYPE html>

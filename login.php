@@ -33,8 +33,6 @@ function login(){
         return;
         //SYSTEM ERROR
     }
-    
-    
     $row = mysqli_fetch_assoc($result);
     echo "Logged in!";
     if($result == true){
@@ -48,15 +46,9 @@ function login(){
    
     $_SESSION['email'] = $row['email'];
     $_SESSION['id'] = $row['id'];
-    
-    
-
-    
 }
 login();
-
 ?>
-
 <!DOCTYPE html>
 <html>
 
@@ -104,8 +96,5 @@ login();
         </div>
         
     </main>
-
-
 </body>
-
 </html>
