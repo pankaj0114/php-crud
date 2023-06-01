@@ -1,6 +1,6 @@
 <?php
-error_reporting(E_ALL);
-ini_set('display_errors', 1);
+//error_reporting(E_ALL);
+//ini_set('display_errors', 1);
 include "config.php";
 $token = $_GET['token'];
 if (isset($_POST['reset_password'])) {
@@ -44,22 +44,29 @@ if (isset($_POST['reset_password'])) {
 
 </heAD>
 
-<body>
-  <h4> Password reset form </h4>
+<body style="text-align:center ; background-color:lightyellow">
+  <h4 style=" font-size:60px ; color:#239CE7 "> Reset Password Form</h4>
   <div class="login_form">
     <form action="passwordreset.php?token=<?php echo $token; ?>" method="POST">
-      <div class="form-group">
+      <div class="form-group" style=" text-align: center ; margin-right:8.0%">
 
-
+        <?php include('messages.php'); ?>
         <?php if (!isset($hide)) { ?>
-          <label class="label_txt">Password </label>
-          <input type="password" name="password" class="form-control" required>
+          <b><label class="label_txt" style="color:#008080 ; font-size:30px ">Change Your Password </label></b>
+          <input type="password" name="password" class="form-control" style="font-size:20px" required
+            title="Please enter the Required password">
         </div>
-        <div class="form-group">
-          <label class="label_txt">Confirm Password </label>
-          <input type="password" name="cpassword" class="form-control" required>
+        <br>
+        <div class="form-group" style="margin-right:8.0%">
+          <b><label class="label_txt" style="color:#008080 ; font-size:30px ">Confirm Your Password </label></b>
+
+          <input type="password" name="cpassword" class="form-control" style="font-size:20px ;  " required
+            title=" Please enter the Confirm password">
+
         </div>
-        <button type="submit" name="reset_password">Reset Password</button>
+        <br>
+        <button type="submit" style=" background-color:#16C3C3 ; font-size:30px ; width:30% ; margin-right:8% "
+          name="reset_password">Reset Password</button>
       <?php } ?>
     </form>
   </div>

@@ -1,7 +1,7 @@
 <?php
 
-//error_reporting(E_ALL);
-//ini_set('display_errors', 1);
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
 
 include "navbar.html";
 include "config.php";
@@ -75,9 +75,8 @@ if ((isset($_POST['save']))) {
         </li>
         <form action="index.php " method="post" style="padding-left:500px">
           <li>
-            <p>Search Bar:</p>
-            <div class="search-box" style="margin-top:0 ; padding-right:50px">
-              <button class="btn-search" name="save"><i class="fas fa-search"></i></button>
+         <div class="search-box" style="margin-top:0 ; padding-right:50px">
+         <button class="btn-search " name="save"><p>🔎 </p><i class="fas fa-search"></i></button>
               <input type="text" class="input-search" name="search" placeholder="Type to Search...">
             </div>
 
@@ -265,12 +264,10 @@ if ((isset($_POST['save']))) {
     */
     ?>
 
-
-    <?php
+  </div>
+  </body>
+    
+</html>
+<?php
     include "footer.html";
     ?>
-    <br>
-  </div>
-</body>
-
-</html>

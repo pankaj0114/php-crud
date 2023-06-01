@@ -1,8 +1,6 @@
+
 <?php
 session_start();
-?>
-<?php
-
 //error_reporting(E_ALL);
 //ini_set('display_errors', 1);
 
@@ -17,7 +15,7 @@ if (isset($_GET['page_no']) && $_GET['page_no'] != "") {
     $page_no = 1;
 }
 
-$total_records_per_page = "2";
+$total_records_per_page = "1";
 $offset = ($page_no - 1) * $total_records_per_page;
 $previous_page = $page_no - 1;
 $next_page = $page_no + 1;
@@ -33,6 +31,11 @@ $total_records = $total_records['total_records'];
 $total_no_of_pages = ceil($total_records / $total_records_per_page);
 $second_last = $total_no_of_pages - 1; // total pages minus 1
 //print_r($total_no_of_pages);
+
+if (empty($_SESSION['email']) || $_SESSION['email'] == '') {
+    
+    header("Location:login.php");
+  }
 
 ?>
 

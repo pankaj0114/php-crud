@@ -5,12 +5,6 @@
 session_start();
 
 
-/*
-if(empty($_SESSION['email']) || $_SESSION['password'] == ''){
-  header("Location:login.php");
-  
-}
-*/
 include "navbar.html";
 include "config.php";
 ?>
@@ -51,9 +45,16 @@ if (!empty($_POST)) {
               values('$name','$email','$address', '$gender', '$states', '$programmer')";
     $q = $conn->query($sql);
 
-
+   
     $conn->close();
     header("Location:index.php");
+
+    if(empty($_SESSION['email']) || $_SESSION['password'] == ''){
+      header("Location:login.php");
+      
+    }
+    
+
   }
 
 
