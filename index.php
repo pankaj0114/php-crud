@@ -75,7 +75,7 @@ if ((isset($_POST['save']))) {
         </li>
         <form action="index.php " method="post" style="padding-left:500px">
 
-        <!--  Search bar Code  --->
+          <!--  Search bar Code  --->
           <li>
             <div class="search-box" style="margin-top:0 ; padding-right:50px">
               <button class="btn-search " name="save">
@@ -83,10 +83,8 @@ if ((isset($_POST['save']))) {
               </button>
               <input type="text" class="input-search" name="search" placeholder="Search Employee">
             </div>
-
-
-
           </li>
+
       </ul>
     </div>
     <div class="form-group">
@@ -104,7 +102,7 @@ if ((isset($_POST['save']))) {
           <th>State</th>
           <th>Programmer</th>
           <?php if (!isset($_POST['search']) && empty($_POST['search'])) { ?>
-            <th> Actions </th>
+          <th> Actions </th>
           <?php } ?>
         </tr>
       </thead>
@@ -113,32 +111,32 @@ if ((isset($_POST['save']))) {
         if ($result->num_rows > 0) {
           while ($row = $result->fetch_assoc()) {
             ?>
-            <tr>
-              <td>
-                <?php echo $row['name']; ?>
-              </td>
-              <td>
-                <?php echo $row['email']; ?>
-              </td>
-              <td>
-                <?php echo $row['address']; ?>
-              </td>
-              <td>
-                <?php echo $row['gender']; ?>
-              </td>
-              <td>
-                <?php echo $row['states']; ?>
-              </td>
-              <td>
-                <?php echo $row['programmer']; ?>
-              </td>
-              <?php if (!isset($_POST['search']) && empty($_POST['search'])) { ?>
-                <td><a class="btn btn-info" href="update.php?id=<?php echo $row['id']; ?>">Edit</a>
-                  &nbsp;
-                  <a class="btn btn-danger" href="delete.php?id=<?php echo $row['id']; ?>">Delete</a>
-                </td>
-                <?php
-              }
+        <tr>
+          <td>
+            <?php echo $row['name']; ?>
+          </td>
+          <td>
+            <?php echo $row['email']; ?>
+          </td>
+          <td>
+            <?php echo $row['address']; ?>
+          </td>
+          <td>
+            <?php echo $row['gender']; ?>
+          </td>
+          <td>
+            <?php echo $row['states']; ?>
+          </td>
+          <td>
+            <?php echo $row['programmer']; ?>
+          </td>
+          <?php if (!isset($_POST['search']) && empty($_POST['search'])) { ?>
+          <td><a class="btn btn-info" href="update.php?id=<?php echo $row['id']; ?>">Edit</a>
+            &nbsp;
+            <a class="btn btn-danger" href="delete.php?id=<?php echo $row['id']; ?>">Delete</a>
+          </td>
+          <?php
+          }
           }
         }
         ?>
@@ -153,27 +151,27 @@ if ((isset($_POST['save']))) {
         } else {
           foreach ($employeesdata as $value) {
             ?>
-            <tr>
-              <td>
-                <?php echo $value['name']; ?>
-              </td>
-              <td>
-                <?php echo $value['email']; ?>
-              </td>
-              <td>
-                <?php echo $value['address']; ?>
-              </td>
-              <td>
-                <?php echo $value['gender']; ?>
-              </td>
-              <td>
-                <?php echo $value['states']; ?>
-              </td>
-              <td>
-                <?php echo $value['programmer']; ?>
-              </td>
-            </tr>
-            <?php
+        <tr>
+          <td>
+            <?php echo $value['name']; ?>
+          </td>
+          <td>
+            <?php echo $value['email']; ?>
+          </td>
+          <td>
+            <?php echo $value['address']; ?>
+          </td>
+          <td>
+            <?php echo $value['gender']; ?>
+          </td>
+          <td>
+            <?php echo $value['states']; ?>
+          </td>
+          <td>
+            <?php echo $value['programmer']; ?>
+          </td>
+        </tr>
+        <?php
           }
         }
         ?>
@@ -188,7 +186,7 @@ if ((isset($_POST['save']))) {
     }
 
 
-    $total_records_per_page = 2;
+    $total_records_per_page = 1;
     //$offset = ($page_no-1)* $total_records_per_page;
     $previous_page = $page_no - 1;
     $next_page = $page_no + 1;

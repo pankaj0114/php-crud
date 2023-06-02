@@ -86,10 +86,8 @@ if (!empty($_POST)) {
               <b><label for="name" class="form-label"> Employee Name</label></b>
               <input type="text" class="form-control" name="name" id="name"
                 value="<?php echo !empty($name) ? $name : ''; ?>" required title="Please enter the employee name ">
-              <?php if (empty($nameErr)): ?>
-                <span class="error">
-                  <?php echo $nameErr; ?>
-                <?php endif; ?>
+                 <span class="error">
+                  <?php echo $nameErr; ?>                
               </span>
             </div>
             <div>
@@ -97,7 +95,7 @@ if (!empty($_POST)) {
               <b><label for="email" class="form-label"> Email </label></b>
 
               <input type="email" class="form-control" name="email" id="email" value="<?php echo $email; ?>" required
-                title="Please enter the employeee email !">
+                title="Please enter the Employee email !">
               <span class="error">
                 <?php echo $emailErr; ?>
               </span>
@@ -108,7 +106,7 @@ if (!empty($_POST)) {
               <br>
               <b><label for="address" class="form-label">Address</label></b>
               <input type="text" class="form-control" name="address" id="addres" value="<?php echo $address; ?>"
-                required>
+                required title = " Enter the Employee Address">
               <span class="error">
                 <?php echo $addressErr; ?>
               </span>
