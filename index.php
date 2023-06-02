@@ -14,7 +14,8 @@ if ((isset($_POST['save']))) {
   }
 }
 
-$sql = "SELECT * FROM employees_info " . $where;
+// employees_info from database 
+$sql = " SELECT * FROM employees_info " . $where;
 $result = $conn->query($sql);
 if (empty($_SESSION['email']) || $_SESSION['email'] == '') {
   header("Location:login.php");
@@ -41,14 +42,15 @@ if ((isset($_POST['save']))) {
     //print_r($employeesdata);
 
   } else {
-    $searchErr = " Please send something";
+    $searchErr = " Please Search  something";
   }
 }
 
 ?>
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+
+<head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -72,23 +74,17 @@ if ((isset($_POST['save']))) {
             </a>
         </li>
         <form action="index.php " method="post" style="padding-left:500px">
+
+        <!--  Search bar Code  --->
           <li>
             <div class="search-box" style="margin-top:0 ; padding-right:50px">
               <button class="btn-search " name="save">
-                <p style="text-align:center">🔎 </p><i class="fas fa-search"></i>
+                <p style="text-align:center ; position:middle">🔎 </p><i class="fas fa-search"></i>
               </button>
-              <input type="text" class="input-search" name="search" placeholder="Type to Search...">
+              <input type="text" class="input-search" name="search" placeholder="Search Employee">
             </div>
-    
-    <!--
-                <div class="search-bar" style="margin-top:0 ; padding-right:50px">
-                  <input type="text" class="form-control" name="search" placeholder="Search here">
-                </div>
-                <div>
-                  <button type="submit" method="post" action=" index.php " name="save" class="btn btn-primary"
-                    style="width:85% ;text-align:center"> Search </button>
-                </div>
-    -->
+
+
 
           </li>
       </ul>
@@ -184,13 +180,14 @@ if ((isset($_POST['save']))) {
       </tbody>
 
     </table>
-
     <?php
     if (isset($_GET['page_no']) && $_GET['page_no'] != "") {
       $page_no = $_GET['page_no'];
     } else {
       $page_no = 1;
     }
+
+
     $total_records_per_page = 2;
     //$offset = ($page_no-1)* $total_records_per_page;
     $previous_page = $page_no - 1;
@@ -204,7 +201,7 @@ if ((isset($_POST['save']))) {
     $total_records = $total_records['total_records'];
     $total_no_of_pages = ceil($total_records / $total_records_per_page);
     $second_last = $total_no_of_pages - 1;
-    // total pages minus 1
+    // total pages minus one 
     //print_r($total_records);
     ?>
     <ul class="pagination">
@@ -247,6 +244,7 @@ if ((isset($_POST['save']))) {
 </body>
 
 </html>
+
 <?php
 include "footer.html";
 ?>

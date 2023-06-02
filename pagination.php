@@ -71,9 +71,8 @@ if (empty($_SESSION['email']) || $_SESSION['email'] == '') {
             $sql = " SELECT * from employees_info  LIMIT $offset , $total_records_per_page ";
             $result = $conn->query($sql);
             while ($row = mysqli_fetch_array($result)) {
-                echo "<tr>
-                    <td>".$row['name'] ."</td>
-                    <td>".$row['email']."</td>
+                echo "<tr> <td>".$row['name'] ."</td>
+                        <td>".$row['email']."</td>
                     <td>".$row['address']."</td>
                     <td>".$row['gender']."</td>
                     <td>".$row['states']."</td>
