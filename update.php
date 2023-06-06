@@ -131,8 +131,18 @@
               </select>
               <br>
               <div>
-                <button type="update" name="update" class="btn btn-primary" style="width:100%">
+                
+              <button type="update" name="update" class="btn btn-primary" style="width:100%">
                 Update the Employee Information </button>
+
+             <!--
+               <div>
+                <buttton type = "update" name="update" class="btn btn-primary " style="width:100%"></buttton>
+              </div>
+              <div>
+                <button type ="submit" name ="submit" class></button>
+              </div>
+              -->
               </div>
             </div>
         </form>

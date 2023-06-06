@@ -1,3 +1,7 @@
+<!--
+    Blank page to given link to Reset password  on that page..
+-->
+
 <?php
 //echo "http://localhost/pankaj/passwordreset.php?token=".$_GET['token'];
 ?>
@@ -14,3 +18,4 @@
     </a>
     </body>
 </html>
+

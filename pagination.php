@@ -76,9 +76,7 @@ if (empty($_SESSION['email']) || $_SESSION['email'] == '') {
             $result = $conn->query($sql);
             while ($row = mysqli_fetch_array($result)) {
                 echo "<tr> <td>".$row['name'] ."</td>
-                        <td>".$row['2
-                        3
-                        email']."</td>
+                     <td> ".$row['email']."</td>
                     <td>".$row['address']."</td>
                     <td>".$row['gender']."</td>
                     <td>".$row['states']."</td>
@@ -112,8 +110,8 @@ if (empty($_SESSION['email']) || $_SESSION['email'] == '') {
                 <a <?php if ($page_no > 1) {
                     echo "href='?page_no=$previous_page'";
                 } ?>>Previous</a>
-            </li>2
-3
+            </li>
+
 
 
 

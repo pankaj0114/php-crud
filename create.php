@@ -25,7 +25,7 @@ if (!empty($_POST)) {
   } else {
     $programmer = "NO";
   }
-  $valid = true;
+   $valid = true;
   if (empty($name)) {
     $nameErr = 'Please Enter Employee Name';
     $valid = false;
@@ -85,9 +85,9 @@ if (!empty($_POST)) {
             <div>
               <b><label for="name" class="form-label"> Employee Name</label></b>
               <input type="text" class="form-control" name="name" id="name"
-                value="<?php echo !empty($name) ? $name : ''; ?>" required title="Please enter the Employee name ">
+                value="<?php echo !empty($name) ? $name : ''; ?>" required title="Please Enter the Employee name ">
                  <span class="error">
-                  <?php echo $nameErr; ?>                
+                  <?php echo" $nameErr"; ?>              
               </span>
             </div>
             <div>

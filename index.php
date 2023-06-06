@@ -10,7 +10,7 @@ $where = "";
 if ((isset($_POST['save']))) {
   if (isset($_POST['search'])) {
     $search = $_POST['search'];
-    $where = " WHERE name like '%$search%' ,email like '%$search%' OR gender like '%$search%' ";
+    $where = " WHERE name like '%$search%' OR email like '%$search%' ";
   }
 }
 
@@ -22,6 +22,7 @@ if (empty($_SESSION['email']) || $_SESSION['email'] == '') {
 }
 ?>
 <?php
+// Employees data which is stored by admin 
 $employeesdata = "";
 $searchErr = " ";
 $name = "";
@@ -35,12 +36,12 @@ if ((isset($_POST['save']))) {
 
     $search = $_POST['search'];
 
-    $sql = "SELECT *from employees_info WHERE name like '%$search%' OR email like '%$search%'   ";
+    $sql = "SELECT *from employees_info WHERE name like '%$search%' OR email like  '%$search%'   ";
     //$result = $conn->query($sql);
-    $employeesdata = []; //$result -> fetch_all(MYSQLI_ASSOC);
+    $employeesdata = []; 
+    //$result -> fetch_all(MYSQLI_ASSOC);
 
-    //print_r($employeesdata);
-
+    
   } else {
     $searchErr = " Please Search  something";
   }
@@ -95,7 +96,7 @@ if ((isset($_POST['save']))) {
     <table class="table">
       <thead>
         <tr>
-          <th> Employee Name </th>
+          <th> Employee Name  </th>
           <th>Email</th>
           <th>Address</th>
           <th>Gender</th>
@@ -185,8 +186,10 @@ if ((isset($_POST['save']))) {
       $page_no = 1;
     }
 
+      //total no. of employee  records to  be displayed on a single page
+    
+    $total_records_per_page = "1";
 
-    $total_records_per_page = 1;
     //$offset = ($page_no-1)* $total_records_per_page;
     $previous_page = $page_no - 1;
     $next_page = $page_no + 1;

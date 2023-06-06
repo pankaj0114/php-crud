@@ -56,8 +56,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     
        
     /*
-    var_dump($showErr);
-    die();
+    //var_dump($showErr);
+    //die();
     */
 
     
@@ -104,7 +104,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 
                 
                 <br>
-                <input type="submit" value="SIGN UP">
+                <input type="submit" value="SIGN UP ">
 
             
             </form>
