@@ -46,9 +46,13 @@ if (!empty($_POST)) {
               values('$name','$email','$address', '$gender', '$states', '$programmer')";
     $q = $conn->query($sql);
 
+   // if (empty($_SESSION['email']) || $_SESSION['email'] == '') {
+     // header("Location:login.php");
+    //}
 
     $conn->close();
     header("Location:index.php");
+
   }
 }
 ?>

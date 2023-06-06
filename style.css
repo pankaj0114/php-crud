@@ -1,5 +1,9 @@
+*{
+    height:max-content;
+}
+
 html{
-    height :fit-content;
+    height :fit content;
 }
 body {
     max-height:fit-content;

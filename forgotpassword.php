@@ -1,8 +1,8 @@
 <?php
 
 include "config.php";
-//error_reporting(E_ALL);
-//ini_set('display_errors', 1);
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
 
 if (isset($_POST['sub_set'])) {
     //$email = $_POST['email'];
@@ -11,25 +11,32 @@ if (isset($_POST['sub_set'])) {
     $email = mysqli_real_escape_string($conn, $_POST['email']);
 
 
-    $query = "SELECT email FROM users WHERE email='$email'";
-    $results = mysqli_query($conn, $query);
+    //$query = "SELECT email FROM users WHERE email='$email'";
+    //$results = mysqli_query($conn, $query);
+
+    $query  = " SELECT email FROM users WHERE email ='$email'";
+    $results = mysqli_query($conn,$query);
 
     if (empty($email)) {
-        //array_push($errors, "Your email is required");
+        array_push($errors, "Your email is required");
         echo " Email is required";
-    } else if (mysqli_num_rows($results) <= 0) {
+    } else if (mysqli_num_rows($results) <= 0)
+     {
         array_push($errors, "Sorry, no user exists on our system with that email");
-        echo "No User exist ";
-    }
+   
+        echo "No User exist here";
+    } 
+    else 
+    {
 
-    $token = bin2hex(random_bytes(50));
-    $sql = "INSERT INTO pass_reset (email_a, token) VALUES ('$email', '$token')";
-    $results = mysqli_query($conn, $sql);
-
-    if ($results == true) {
-        header("Location: blank.php?token=" . $token);
+        $token = bin2hex(random_bytes(50));
+        $sql = "INSERT INTO pass_reset (email, token) VALUES ('$email', '$token')";
+        $results = mysqli_query($conn, $sql);
+        if ($results == true) {
+            header("Location: blank.php?token=" . $token);
+        }
     }
-}
+    }
 
 ?>
 
