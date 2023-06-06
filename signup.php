@@ -1,7 +1,7 @@
 <?php
 
-//error_reporting(E_ALL);
-//ini_set('display_errors', 1);
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
 
 session_start();
 $showAlert = false;
@@ -42,8 +42,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     
     else if ($num >= 0 && ($password == $cpassword) && $exist == false) {
 
-        $sql = "INSERT INTO users ( email, password, cpassword , date )
-         VALUES ('$email' ,'$password' , '$cpassword', current_timestamp())";
+        $sql = "INSERT INTO users ( email, password,  date )
+         VALUES ('$email' ,'$password' ,  current_timestamp())";
 
         $result = mysqli_query($conn, $sql);
 
@@ -106,6 +106,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 <br>
                 <input type="submit" value="SIGN UP">
 
+            
             </form>
             <div class="dash-board">
                 <p> Already have an account? <a href="login.php"> Sign In Instead🔒 </a></p>

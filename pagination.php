@@ -42,6 +42,8 @@ if (empty($_SESSION['email']) || $_SESSION['email'] == '') {
 <html>
 
 <head>
+
+
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -57,6 +59,8 @@ if (empty($_SESSION['email']) || $_SESSION['email'] == '') {
     <table class="table table-striped table-bordered">
         <thead>
             <tr>
+            
+
 
                 <th style='width:150px;'> Employee Name</th>
                 <th style='width:50px;'>Email</th>
@@ -72,7 +76,9 @@ if (empty($_SESSION['email']) || $_SESSION['email'] == '') {
             $result = $conn->query($sql);
             while ($row = mysqli_fetch_array($result)) {
                 echo "<tr> <td>".$row['name'] ."</td>
-                        <td>".$row['email']."</td>
+                        <td>".$row['2
+                        3
+                        email']."</td>
                     <td>".$row['address']."</td>
                     <td>".$row['gender']."</td>
                     <td>".$row['states']."</td>
@@ -81,6 +87,8 @@ if (empty($_SESSION['email']) || $_SESSION['email'] == '') {
 
             }
             mysqli_close($conn);
+            
+            
             ?>
         </tbody>
     </table>
@@ -92,7 +100,9 @@ if (empty($_SESSION['email']) || $_SESSION['email'] == '') {
 
 
         <ul class="pagination">
-            <?php if ($page_no > 1) {
+            <?php if ($page_no > 1) 
+
+{
                 echo "<li><a href='pagination.php?page_no=1'>First Page</a></li>";
             } ?>
 
@@ -102,7 +112,9 @@ if (empty($_SESSION['email']) || $_SESSION['email'] == '') {
                 <a <?php if ($page_no > 1) {
                     echo "href='?page_no=$previous_page'";
                 } ?>>Previous</a>
-            </li>
+            </li>2
+3
+
 
 
             <?php

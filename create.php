@@ -85,7 +85,7 @@ if (!empty($_POST)) {
             <div>
               <b><label for="name" class="form-label"> Employee Name</label></b>
               <input type="text" class="form-control" name="name" id="name"
-                value="<?php echo !empty($name) ? $name : ''; ?>" required title="Please enter the employee name ">
+                value="<?php echo !empty($name) ? $name : ''; ?>" required title="Please enter the Employee name ">
                  <span class="error">
                   <?php echo $nameErr; ?>                
               </span>
@@ -151,6 +151,7 @@ if (!empty($_POST)) {
                   echo "selected"; ?>>Goa
 
                 </option>
+                
               </select>
             </div>
 

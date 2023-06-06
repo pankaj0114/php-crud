@@ -10,7 +10,7 @@ $where = "";
 if ((isset($_POST['save']))) {
   if (isset($_POST['search'])) {
     $search = $_POST['search'];
-    $where = " WHERE name like '%$search%' OR email like '%$search%' ";
+    $where = " WHERE name like '%$search%' ,email like '%$search%' OR gender like '%$search%' ";
   }
 }
 

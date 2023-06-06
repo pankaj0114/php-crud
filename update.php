@@ -132,7 +132,7 @@
               <br>
               <div>
                 <button type="update" name="update" class="btn btn-primary" style="width:100%">
-                  Update Employee Information </button>
+                Update the Employee Information </button>
               </div>
             </div>
         </form>

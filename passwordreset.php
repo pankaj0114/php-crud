@@ -13,6 +13,7 @@ if (isset($_POST['reset_password'])) {
   // Grab to token that came from the email link
 
   $token = $_GET['token'];
+  
 
   if (empty($password) || empty($cpassword))
     array_push($errors, "Password is required");
@@ -67,6 +68,7 @@ if (isset($_POST['reset_password'])) {
         <button type="submit" style=" background-color:#16C3C3 ; font-size:30px ; width:30% ; margin-right:8% "
           name="reset_password">Reset Password</button>
       <?php } ?>
+    
     </form>
   </div>
 
