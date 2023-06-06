@@ -1,7 +1,7 @@
 <?php
 
-error_reporting(E_ALL);
-ini_set('display_errors', 1);
+//error_reporting(E_ALL);
+//ini_set('display_errors', 1);
 
 include "navbar.html";
 include "config.php";
@@ -96,7 +96,7 @@ if ((isset($_POST['save']))) {
     <table class="table">
       <thead>
         <tr>
-          <th> Employee Name  </th>
+          <th> Employee Name </th>
           <th>Email</th>
           <th>Address</th>
           <th>Gender</th>

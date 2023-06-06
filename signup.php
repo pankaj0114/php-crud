@@ -1,5 +1,4 @@
 <?php
-
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
 
@@ -24,6 +23,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     $num = mysqli_num_rows($result);
     if ( $password != $cpassword ){
+        
         $showErr = "Password doesn't match";
         echo "Password does not match";
     } 
@@ -33,7 +33,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 
     else if((empty($email)&& (!empty($password) &&(!empty($cpassword))))){
-                echo "Please enter the Email  ";
+                echo "Please enter the Email Address ";
     }
     else if ((!empty($email)&&(empty($password)&&empty($cpassword )))){
                     echo "Please enter the Password & Confirm Password ";
@@ -55,13 +55,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
     
        
-    /*
-    //var_dump($showErr);
-    //die();
-    */
-
-    
-
+   
 }
 
 ?>
@@ -73,8 +67,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <title>Signup</title>
     <link rel="stylesheet" type="text/css" href="signup.css">
 </head>
-
 <body>
+
+
 <div class="bg"></div>
 <div class="bg bg2"></div>
 <div class="bg bg3"></div>
@@ -111,8 +106,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <div class="dash-board">
                 <p> Already have an account? <a href="login.php"> Sign In Instead🔒 </a></p>
             </div>
-
-          
+                
        </div>
         </div>
     </main>

@@ -6,12 +6,7 @@ session_start();
 //we use function block so we can use early returns
 function login()
 {
-    // if (isset($_POST['email']) || isset($_POST['password'])) {
-//return;}
     include "config.php";
-    if (empty($password) && (empty($email))) {
-        echo "Please Enter the  email and Password !!";
-    }
 
     $email = $_POST['email'];
     $password = $_POST['password'];
@@ -23,15 +18,26 @@ function login()
         //SYSTEM ERROR
     }
     $row = mysqli_fetch_assoc($result);
-    echo "Logged in!";
+     echo "Logged in!";
     if ($result == true) {
         header("Location: index.php");
     } else if ($result == false) {
-        echo "Please Enter the Correct Email or Password if you want to Login !!!!";
+        echo "Please Enter the Correct Email or Password if you want to Login.!";
     }
+    
+        
+    if (empty($password) && (empty($email))) 
+    {
+        echo "Please Enter the  email and Password !!";
+    }
+    else if (empty($password)&&(!empty($email)))
+    {
+        echo "Please enter the  Password ";
+}
     $_SESSION['email'] = $row['email'];
     $_SESSION['id'] = $row['id'];
 }
+
 login();
 ?>
 <!DOCTYPE html>
@@ -59,9 +65,9 @@ login();
                 </div>
                 <form method="post" action="login.php" class="login-form">
                     <label for="email"> Email</label>
-                    <input type="email" name="email" id="email" placeholder="Email" required>
+                    <input type="email" name="email" id="email" placeholder="Email" >
                     <label for="password">Password</label>
-                    <input type="password" name="password" id="password" placeholder="Password" required>
+                    <input type="password" name="password" id="password" placeholder="Password" >
                     <input type="submit" value="LOG IN">
                 </form>
                 <div class="dash-board">

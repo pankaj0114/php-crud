@@ -1,7 +1,8 @@
 <?php
+
 include "config.php";
-error_reporting(E_ALL);
-ini_set('display_errors', 1);
+//error_reporting(E_ALL);
+//ini_set('display_errors', 1);
 
 if (isset($_POST['sub_set'])) {
     //$email = $_POST['email'];
@@ -14,7 +15,7 @@ if (isset($_POST['sub_set'])) {
     $results = mysqli_query($conn, $query);
 
     if (empty($email)) {
-        array_push($errors, "Your email is required");
+        //array_push($errors, "Your email is required");
         echo " Email is required";
     } else if (mysqli_num_rows($results) <= 0) {
         array_push($errors, "Sorry, no user exists on our system with that email");
@@ -48,11 +49,12 @@ if (isset($_POST['sub_set'])) {
             <?php include('messages.php'); ?>
             <p style="font-size:20px; color:crimson"> Forgot Password ! Enter Your Email to get Password Reset Link </p>
             <input type="text" class="form-control" style="font-size: 30px ; width:80%" name="email"
-                placeholder=" Enter Your Email" required="" autofocus="" />
+                placeholder=" Enter Your Email" required mesage="Enter mail Address" autofocus="" />
             <br><br>
             <button class="btn-btn-primary" style="font-size:20px ; background-color:#16C3C3 ; width:80%"
                 type="submit">Submit</button>
             <input type="hidden" name="sub_set" value="forgot" />
+            
         </form>
     </div>
 
